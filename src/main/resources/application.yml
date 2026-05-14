@@ -5,9 +5,9 @@ spring:
     application:
         name: projeto-biblioteca
     datasource:
-        url: jdbc:h2:mem:projetodb
-        username: sa
-        password:
+        url: jdbc:h2:mem:projeto-biblioteca
+        username: admin
+        password: dwj2026
     h2:
         console:
             enabled: true
