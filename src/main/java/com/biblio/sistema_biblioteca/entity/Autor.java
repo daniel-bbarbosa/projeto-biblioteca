@@ -15,6 +15,7 @@ import java.util.ArrayList;
 @Entity
 @Table(name = "autor")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter @Setter
 public class Autor {
 
@@ -35,10 +36,4 @@ public class Autor {
     @JsonIgnore
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL)
     private List<Livro> livros = new ArrayList<>();
-
-    public Autor(Long id, String nome, String nacionalidade) {
-        this.id = id;
-        this.nome = nome;
-        this.nacionalidade = nacionalidade;
-    }
 }

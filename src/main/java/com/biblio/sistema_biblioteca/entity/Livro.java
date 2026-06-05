@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 @Entity
 @Table(name = "livro")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter @Setter
 public class Livro {
 
@@ -42,12 +44,4 @@ public class Livro {
     @JsonIgnore
     @OneToMany(mappedBy = "livro", cascade = CascadeType.ALL)
     private List<Emprestimo> emprestimos = new ArrayList<>();
-
-    public Livro(Long id, String titulo, String isbn, Autor autor, Categoria categoria) {
-        this.id = id;
-        this.titulo = titulo;
-        this.isbn = isbn;
-        this.autor = autor;
-        this.categoria = categoria;
     }
-}

@@ -2,6 +2,7 @@ package com.biblio.sistema_biblioteca.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "emprestimo")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter @Setter
 public class Emprestimo {
 
@@ -42,12 +44,4 @@ public class Emprestimo {
     @ManyToOne
     @JoinColumn(name = "livro_id", nullable = false)
     private Livro livro;
-
-    public Emprestimo(Long id, LocalDate dataEmprestimo, LocalDate dataDevolucao, Usuario usuario, Livro livro) {
-        this.id = id;
-        this.dataEmprestimo = dataEmprestimo;
-        this.dataDevolucao = dataDevolucao;
-        this.usuario = usuario;
-        this.livro = livro;
-    }
 }
